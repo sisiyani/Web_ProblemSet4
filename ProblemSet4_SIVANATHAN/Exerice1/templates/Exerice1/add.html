@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding new content !!!</title>
+    <style>
+
+    <style>
+
+    body{
+      width:95%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content:center;
+      gap:2%;
+      background-color: FloralWhite
+    }
+
+    form{
+
+      width: 98%;
+      height:35em;
+      background-color:  #FAEBD7;
+      display: flex;
+      flex-direction: column;
+      justify-content:top;
+      gap:5%;
+      padding: 1em;
+      overflow-y: auto;
+      border-radius: 2%;
+    }
+
+    #cancel{
+      width:30%;
+      height: auto;
+      background-color: #FAEBD7	;
+      border-radius: 1%;
+    }
+
+    #toAdd{
+      height: 80%
+    }
+
+    #add{
+      width:30%;
+    }
+
+    </style>
+
+</head>
+<body>
+    <h1>You can add new content !!!</h1>
+    <form method="post" action="{% url 'homepage' %}">
+        {% csrf_token %}
+        {{ form }}
+        <br><br>
+        <input id="add" type="submit" value="Add new content">
+    </form>
+    <br><br>
+    <button id="cancel" onclick="location.href = '/'"> Cancel</button>
+
+
+</body>
+</html>

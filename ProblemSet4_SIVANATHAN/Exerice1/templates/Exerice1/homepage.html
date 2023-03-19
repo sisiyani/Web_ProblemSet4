@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+
+    body{
+      font: italic 1.2em "Fira Sans", serif;
+      width:95%;
+      height: 100%;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content:center;
+      gap:2%;
+      /*background-color: pink;*/
+      background-color: FloralWhite
+    }
+
+    #contents{
+
+      width: 80%;
+      height:35em;
+      background-color:  #FAEBD7;
+      display: flex;
+      flex-direction: column;
+      justify-content:top;
+      gap:2%;
+      padding: 1em;
+      overflow-y: auto;
+      border-radius: 2%;
+    }
+
+
+    #newContent{
+      width:30%;
+      height: auto;
+      background-color: #FAEBD7	;
+      border-radius: 1%;
+    }
+    h1{
+      width: 100%;
+      text-align: center;
+    }
+
+    li{
+      list-style: none;
+      padding: : 1%;
+      border-color: black;
+    }
+    .new{
+      background-color:LightCoral;
+    }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to the Homepage !!!</h1>
+    <button id="newContent" onclick="location.href = '/add'"> Add a new content</button>
+
+    <ul id="contents">
+      {% if new is not null %}
+        <li class="new">New content !!!<br>ID:{{ new.id }}   User:{{new.name}}   Content:{{name.content}}</li>
+      {% endif %}
+      {% for c in contents %}
+        <li>ID:{{ c.id }}   User:{{c.name}}   Content:{{c.content}}</li>
+      {% endfor %}
+    </ul>
+    <form method="get" action="{'% url 'entrylevel' %}">
+        {% csrf_token %}
+        {{ form }}
+        <br><br>
+        <input id="add" type="submit" value="Get entry">
+    </form>
+
+
+
+</body>
+</html>
